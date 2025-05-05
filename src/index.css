@@ -96,7 +96,7 @@ body {
 }
 
 .nav-link--active {
-  color: #A8D5E2; /* Pastel Primary */
+  color: #A8D5E2; 
   font-weight: 700;
 }
 
@@ -230,14 +230,14 @@ body {
 }
 
 .event-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 14px;
   color: #EDEDF4;
 }
 
 .event-detail {
-  font-size: 16px;
+  font-size: 14px;
   color: #B0B0CC; /* Text Secondary */
   margin-bottom: 10px;
 }
@@ -322,7 +322,8 @@ body {
 .event-details-image-before,
 .event-details-image-after {
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 400px;
   margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -365,7 +366,7 @@ body {
 
 .event-details-highlight-description {
   font-size: 15px;
-  color: #B0B0CC; /* Text Secondary */
+  color: #B0B0CC; 
   line-height: 1.6;
   margin: 0;
 }
@@ -391,25 +392,33 @@ body {
 .carousel {
   position: relative;
   width: 100%;
-  max-height: 450px;
+  max-width: 600px;
+  height: auto;
+  max-height: 350px;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin: 0 auto 30px; /* Center the carousel */
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #1E1E2F; /* Primary Dark for empty space */
+  aspect-ratio: 16 / 9; /* Maintain consistent shape */
 }
 
 .carousel-images {
   display: flex;
   width: 100%;
-  height: 450px;
+  height: auto;
+  max-height: 350px;
   transition: transform 0.6s ease-in-out;
 }
 
 .carousel-image {
   flex: 0 0 100%;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain; /* Ensure full image visibility */
+  object-position: center; /* Center the image */
+  background: #1E1E2F; /* Primary Dark for letterboxed areas */
   filter: brightness(0.95);
 }
 
@@ -525,8 +534,25 @@ body {
     column-count: 1;
   }
 
+  .carousel {
+    max-width: 100%; 
+    max-height: 300px;
+    margin: 0 auto 30px; 
+    aspect-ratio: 4 / 3; 
+  }
+
   .carousel-images {
-    height: 300px;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .carousel-image {
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #1E1E2F;
   }
 
   .event-details-meta {
@@ -576,11 +602,32 @@ body {
   }
 
   .day-events-title {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .event-details-title {
     font-size: 28px;
+  }
+
+  .carousel {
+    max-width: 100%;
+    max-height: 250px;
+    margin: 0 auto 30px; /* Maintain centering */
+    aspect-ratio: 4 / 3;
+  }
+
+  .carousel-images {
+    height: auto;
+    max-height: 250px;
+  }
+
+  .carousel-image {
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #1E1E2F;
   }
 }
 
